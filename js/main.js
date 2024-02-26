@@ -48,10 +48,32 @@ $(document).ready(function () {
     },
   });
 
+  $(".header-bottom").clone(true).appendTo(".header-fixed .container");
 
-  
-////////////////////////////////////////////////////////////////////////////////////////
-  // $("header").after($("header").clone(true).addClass("cloneHeader"));
+  (() => {
+    let lastpos, header = document.querySelector('.header-fixed');
+    window.addEventListener('scroll', () => {
+      if($(window).scrollTop()<$(window).innerHeight()
+      ){$('.header-fixed').removeClass('inMain')}
+      else $('.header-fixed').addClass('inMain')
+      const winpos = window.pageYOffset;
+      if (winpos < lastpos) {
+        header.classList.add('moveon');
+        header.classList.remove('moveout');
+      }
+      else {
+        header.classList.add('moveout');
+        header.classList.remove('moveon');
+      }
+      if (winpos < header.offsetHeight) {
+        if (header.classList.contains('moveon'))
+          header.classList.add('moveon');
+      }
+      lastpos = document.documentElement.scrollTop;
+    });
+  })();
+
+
   // $(".cloneHeader .hdr_top").remove();
   function checkPositionHeader() {
     // if ($(this).scrollTop() > 0) {
@@ -77,6 +99,10 @@ $(document).ready(function () {
     checkPositionHeader();
   });
   checkPositionHeader();
+
+
+  ////////////////////////////////////////////////////////////////////////////////////////
+
 
   $(".scrollup").click(function () {
     $("html, body").animate({ scrollTop: 0 }, 600);
