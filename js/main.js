@@ -1,4 +1,24 @@
 $(document).ready(function () {
+
+  $("body").click(function (e) {
+    if (!$(e.target).is(".language_block *,.language_block")) {
+      $(".language_block").removeClass("active");
+    }
+
+    if (
+      !$(e.target).is(
+        ".mobile__menu .right_block, .mobile__menu .right_block *"
+      )
+    ) {
+      $(".mobile__menu").removeClass("active");
+      $("body").removeClass("opened");
+    }
+  });
+
+  $(document).on("click", ".open_sidebar", function () {
+    $(".mobile__menu").addClass("active");
+    $("body").addClass("opened");
+  });
   var main_swiper = new Swiper(".main-swiper", {
     effect: 'fade',
     slidesPerView: 1,
@@ -14,8 +34,8 @@ $(document).ready(function () {
   });
 
   var specialtyUnivercity = new Swiper(".swiper-teachers", {
-    slidesPerView: 1,
-    spaceBetween: 30,
+    slidesPerView: 1.4,
+    spaceBetween: 20,
     observer: true,
     observeParents: true,
     navigation: {
@@ -26,14 +46,15 @@ $(document).ready(function () {
     breakpoints: {
       767: {
         slidesPerView: 2,
-      },
+    spaceBetween: 30,
+  },
     },
   });
 
 
   var newsUnivercity = new Swiper(".news-univercity .swiper-container", {
-    slidesPerView: 1,
-    spaceBetween: 30,
+    slidesPerView: 1.2,
+    spaceBetween: 20,
     observer: true,
     observeParents: true,
     navigation: {
@@ -43,6 +64,10 @@ $(document).ready(function () {
     loop: true,
     breakpoints: {
       767: {
+    spaceBetween: 30,
+    slidesPerView: 2,
+      },
+      992: {
         slidesPerView: 3,
       },
     },
@@ -83,7 +108,7 @@ $(document).ready(function () {
     // }
   }
   $(window).scroll(function () {
-    if ($(window).width() > 1299) {
+    if ($(window).width() > 1249) {
       if ($(this).scrollTop() > $(window).height() / 1.5) {
         $(".cloneHeader").addClass("opened");
       } else {
@@ -484,25 +509,7 @@ $(document).ready(function () {
     },
   });
 
-  $("body").click(function (e) {
-    if (!$(e.target).is(".language_block *,.language_block")) {
-      $(".language_block").removeClass("active");
-    }
 
-    if (
-      !$(e.target).is(
-        ".mobile__menu .right_block, .mobile__menu .right_block *"
-      )
-    ) {
-      $(".mobile__menu").removeClass("active");
-      $("body").removeClass("opened");
-    }
-  });
-
-  $(document).on("click", ".open_sidebar", function () {
-    $(".mobile__menu").addClass("active");
-    $("body").addClass("opened");
-  });
 
   $(document).on("click", ".toggle_password span", function () {
     $(this).parent().toggleClass("show");
