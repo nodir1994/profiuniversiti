@@ -540,7 +540,7 @@ $(document).ready(function () {
 
   $.mask.definitions["9"] = "";
   $.mask.definitions["d"] = "[0-9]";
-  $("input[type='tel']").mask("998 dd ddd dd dd");
+  $("input[type='tel']").mask("+998 dd ddd dd dd");
 
   $(".passport1").mask("aa");
 
