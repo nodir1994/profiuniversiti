@@ -23,6 +23,9 @@ $(document).ready(function () {
     effect: 'fade',
     slidesPerView: 1,
     spaceBetween: 0,
+    autoplay: {
+      delay: 3000,
+    },
     pagination: {
       el: ".main-swiper  .swiper-pagination",
       type: "bullets",
@@ -38,6 +41,9 @@ $(document).ready(function () {
     spaceBetween: 20,
     observer: true,
     observeParents: true,
+    autoplay: {
+      delay: 3000,
+    },
     navigation: {
       nextEl: ".specialty-univercity .next-button",
       prevEl: ".specialty-univercity .prev-button",
@@ -56,6 +62,9 @@ $(document).ready(function () {
     slidesPerView: 1.2,
     spaceBetween: 20,
     observer: true,
+    autoplay: {
+      delay: 3000,
+    },
     observeParents: true,
     navigation: {
       nextEl: ".news-univercity .next-button",
@@ -178,6 +187,9 @@ $(document).ready(function () {
       nextEl: ".specialts .right_btn",
       prevEl: ".specialts .left_btn",
     },
+    autoplay: {
+      delay: 3000,
+    },
     loop: true,
     breakpoints: {
       767: {
@@ -199,6 +211,9 @@ $(document).ready(function () {
   var partner_swiper = new Swiper(".partner_swiper", {
     slidesPerView: 1.2,
     spaceBetween: 6,
+    autoplay: {
+      delay: 3000,
+    },
     scrollbar: {
       el: ".swiper-scrollbar",
       hide: true,
@@ -216,6 +231,9 @@ $(document).ready(function () {
   var reelSwiper = new Swiper(".reel_swiper", {
     slidesPerView: 1.2,
     spaceBetween: 6,
+    autoplay: {
+      delay: 3000,
+    },
     scrollbar: {
       el: ".swiper-scrollbar",
       hide: true,
@@ -299,7 +317,7 @@ $(document).ready(function () {
     slidesPerView: 6,
     spaceBetween: 24,
     autoplay: {
-      delay: 17000,
+      delay: 5000,
     },
     loop: true,
     pagination: {
@@ -349,6 +367,9 @@ $(document).ready(function () {
   var home_advantage = new Swiper(".home_advantage .swiper-container", {
     slidesPerView: 3,
     spaceBetween: 24,
+    autoplay: {
+      delay: 3000,
+    },
     simulateTouch: false,
     pagination: {
       el: ".home_advantage .swiper-pagination",
@@ -369,6 +390,9 @@ $(document).ready(function () {
   var students = new Swiper(".students .swiper-container", {
     slidesPerView: 1,
     spaceBetween: 24,
+    autoplay: {
+      delay: 5000,
+    },
     pagination: {
       el: ".students .swiper-pagination",
       type: "bullets",
@@ -402,6 +426,9 @@ $(document).ready(function () {
       nextEl: ".video_lessons .right_btn",
       prevEl: ".video_lessons .left_btn",
     },
+    autoplay: {
+      delay: 5000,
+    },
     loop: true,
     breakpoints: {
       767: {
@@ -433,6 +460,9 @@ $(document).ready(function () {
       prevEl: ".video_section .btn_swiper .left_btn",
     },
     loop: true,
+    autoplay: {
+      delay: 5000,
+    },
     breakpoints: {
       // 767: {
       //   slidesPerView: 1,
@@ -451,6 +481,9 @@ $(document).ready(function () {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
+    autoplay: {
+      delay: 5000,
+    },
     coverflowEffect: {
       rotate: 50,
       stretch: 0,
