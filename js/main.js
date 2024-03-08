@@ -162,7 +162,10 @@ $(document).ready(function () {
   });
   checkPositionHeader();
 
-
+  $('#inputGroupFile04').on('change',function(event){
+    var name = event.target.files[0].name;
+    $('#file-name').text(name);
+  })
   ////////////////////////////////////////////////////////////////////////////////////////
 
 
