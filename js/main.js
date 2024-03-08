@@ -22,9 +22,10 @@ $(document).ready(function () {
   var main_swiper = new Swiper(".main-swiper", {
     effect: 'fade',
     slidesPerView: 1,
+    speed: 900,
     spaceBetween: 0,
     autoplay: {
-      delay: 3000,
+      delay: 6000,
     },
     pagination: {
       el: ".main-swiper  .swiper-pagination",
@@ -52,8 +53,35 @@ $(document).ready(function () {
     breakpoints: {
       767: {
         slidesPerView: 2,
-    spaceBetween: 30,
-  },
+        spaceBetween: 30,
+      },
+    },
+  });
+
+  var specialtyUnivercity = new Swiper(".swiper-teach", {
+    slidesPerView: 1.4,
+    spaceBetween: 20,
+    observer: true,
+    observeParents: true,
+    autoplay: {
+      delay: 3000,
+    },
+    navigation: {
+      nextEl: ".specialty-univercity .next-button",
+      prevEl: ".specialty-univercity .prev-button",
+    },
+    loop: true,
+    breakpoints: {
+      767: {
+        slidesPerView: 2.3,
+        spaceBetween: 30,
+      },
+      992: {
+        slidesPerView: 3,
+      }, 
+      1025: {
+        slidesPerView: 4,
+      },
     },
   });
 
@@ -73,8 +101,8 @@ $(document).ready(function () {
     loop: true,
     breakpoints: {
       767: {
-    spaceBetween: 30,
-    slidesPerView: 2,
+        spaceBetween: 30,
+        slidesPerView: 2,
       },
       992: {
         slidesPerView: 3,
@@ -87,8 +115,8 @@ $(document).ready(function () {
   (() => {
     let lastpos, header = document.querySelector('.header-fixed');
     window.addEventListener('scroll', () => {
-      if($(window).scrollTop()<$(window).innerHeight()
-      ){$('.header-fixed').removeClass('inMain')}
+      if ($(window).scrollTop() < $(window).innerHeight()
+      ) { $('.header-fixed').removeClass('inMain') }
       else $('.header-fixed').addClass('inMain')
       const winpos = window.pageYOffset;
       if (winpos < lastpos) {
@@ -224,6 +252,51 @@ $(document).ready(function () {
       },
       991: {
         slidesPerView: 3.1,
+      },
+    },
+  });
+
+  var partner_swiper = new Swiper(".partner_swiper", {
+    slidesPerView: 1.2,
+    spaceBetween: 6,
+    autoplay: {
+      delay: 3000,
+    },
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      hide: true,
+    },
+    breakpoints: {
+      767: {
+        slidesPerView: 2.1,
+      },
+      991: {
+        slidesPerView: 3.1,
+      },
+    },
+  });
+
+
+  var block_life_swiper = new Swiper(".block-life-swiper", {
+    slidesPerView: 1.2,
+    spaceBetween: 6,
+    autoplay: {
+      delay: 3000,
+    },
+    scrollbar: {
+      el: ".block-life-swiper .swiper-scrollbar",
+      hide: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2.3,
+      },
+      991: {
+        slidesPerView: 3,
+      },
+      1025: {
+        slidesPerView: 4,
+        spaceBetween: 30,
       },
     },
   });
